@@ -1,0 +1,17 @@
+{
+  "name": "waste-sorting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index"
+  },
+  "author": "suman mukherjee",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7",
+    "nodemon": "^2.0.15"
+  }
+}
