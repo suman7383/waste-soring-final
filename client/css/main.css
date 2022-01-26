@@ -13,8 +13,15 @@ body {
 }
 
 .heading {
-  letter-spacing: 1.2px;
-  font-weight: 320;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+  background-color: #7dc9f3;
+  border-radius: 50%;
 }
 
 /* progress style */
@@ -54,7 +61,7 @@ input {
 }
 
 .progressbar::before,
-.progress {
+.progress-custom {
   content: "";
   position: absolute;
   top: 50%;
@@ -65,8 +72,8 @@ input {
   z-index: -1;
 }
 
-.progress {
-  background-color: #00bfa6;
+.progress-custom {
+  background-color: rgba(90, 79, 219, 0.8);
   width: 0%;
   transition: 0.3s;
 }
@@ -88,14 +95,16 @@ input {
 
 .progress-step::after {
   content: attr(data-title);
+  width: 100px;
   position: absolute;
+  text-align: center;
   top: calc(100% + 0.5rem);
   font-size: 0.85rem;
   color: #666;
 }
 
 .progress-step-active {
-  background-color: #00bfa6;
+  background-color: rgba(90, 79, 219);
   color: #f3f3f3;
 }
 
@@ -117,9 +126,8 @@ input {
 }
 
 .input-group {
-  width: 75vw !important;
-  height: 40vh !important;
-  margin: 2rem 0;
+  width: 100% !important;
+  margin-top: 0;
 }
 
 @keyframes animate {
@@ -135,23 +143,75 @@ input {
 
 /* Button */
 .btns-group {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn {
   padding: 0.75rem;
   display: block;
+  padding: 7px;
   text-decoration: none;
-  background-color: var(--primary-color);
+  background-color: rgba(80, 68, 217, 0.8);
   color: #f3f3f3;
   text-align: center;
   border-radius: 0.25rem;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 20px;
 }
 
 .btn:hover {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+}
+
+.btn-me {
+  width: 120px;
+}
+
+.btn-next,
+.btn-prev,
+.btn-send {
+  width: 120px;
+}
+
+.main-box {
+  height: inherit;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+/* icons  */
+
+.icons {
+  width: 60px;
+  height: 60px;
+  margin: 10px 0;
+}
+
+/* 2nd step */
+
+.process-text {
+  font-weight: 350;
+  color: #4d4747;
+}
+
+.progress {
+  width: 70%;
+}
+
+.waste-items {
+  margin: 10px 0;
+  width: 90%;
+  min-width: 250px;
+  height: auto;
+  min-height: 92px;
+  border-radius: 15px;
+  align-self: center;
+  border: 1px solid black;
+}
+
+.item-count::after {
+  content: attr(data-title);
 }
