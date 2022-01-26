@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login Here</h1>
+      <form>
+        <div class="login">
+          <input type="email" id="email" required />
+          <span></span>
+          <label for="email">Email id</label>
+        </div>
+        <div class="login">
+          <input type="password" id="password" required />
+          <span></span>
+          <label for="password">Password</label>
+        </div>
+        <div class="login_as">
+          <input type="radio" name="login_as" value="1" />login as citizen
+          <input type="radio" name="login_as" value="2" />login as collector
+        </div>
+        <div class="forgot_pass">Forgot your password?</div>
+        <input type="submit" value="Login" />
+        <div class="signup_link">
+          Don't have an account?
+          <a href="http://127.0.0.1:5502/index.html" target="_blank">Signup</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

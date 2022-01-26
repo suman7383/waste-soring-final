@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 500px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 15px rgb(76, 76, 236);
+}
+.container h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid grey;
+}
+.container form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .signup {
+  position: relative;
+  border-bottom: 2px solid silver;
+  margin: 30px 0;
+}
+form .signup_select {
+  position: relative;
+  border-bottom: 2px solid silver;
+  margin: 30px 0;
+  color: grey;
+}
+.signup input {
+  width: 100%;
+  padding: 0 5px;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.signup label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: grey;
+  font-size: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition-duration: 0.5s;
+}
+.signup span::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(20, 168, 218);
+  transition-duration: 0.5s;
+}
+.signup input:focus ~ label,
+.signup input:valid ~ label {
+  top: -5px;
+  color: rgb(20, 168, 218);
+}
+.signup input:focus ~ span::before,
+.signup input:valid ~ span::before {
+  width: 100%;
+}
+#create_acc {
+  width: 60%;
+  height: 45px;
+  margin: 0 80px 20px 80px;
+  border: 1px solid rgb(20, 168, 218);
+  background-color: rgb(20, 168, 218);
+  border-radius: 25px;
+  font-size: 18px;
+  color: whitesmoke;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+#create_acc:hover {
+  border-color: rgb(3, 3, 90);
+  background-color: rgb(53, 53, 199);
+  transition-duration: 0.5s;
+}
