@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="./script/login.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login Here</h1>
+      <form id="login-form">
+        <div class="login">
+          <input type="email" id="email" required />
+          <span></span>
+          <label for="email">Email id</label>
+        </div>
+        <div class="login">
+          <input type="password" id="password" required />
+          <span></span>
+          <label for="password">Password</label>
+        </div>
+        <div class="login_as">
+          I am &nbsp;
+          <input
+            type="radio"
+            name="login_as"
+            value="citizen"
+            id="citizen"
+            checked="checked"
+          />
+          <label for="citizen">citizen &nbsp;&nbsp;</label>
+          <input
+            type="radio"
+            name="login_as"
+            value="collector"
+            id="collector"
+          />
+          <label for="collector">collector</label>
+        </div>
+        <div class="forgot_pass">Forgot your password?</div>
+        <button type="submit" value="Login" onClick="login(event)">
+          Login
+        </button>
+        <div class="signup_link">
+          Don't have an account?
+          <a href="../Signup Page/index.html">Signup</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

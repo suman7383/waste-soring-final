@@ -1,0 +1,61 @@
+:root {
+  --primary-color: rgb(11, 78, 179);
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.table {
+  width: 100%;
+  border: 0.5px solid black;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.house-count::after,
+.max-type::after {
+  content: attr(data-title);
+  color: green;
+}
+
+.btn-me {
+  padding: 0.75rem;
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.btn-me:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  background-color: #ffffff;
+  transition-duration: 0.3s;
+  color: black;
+  transform: scale(1.05);
+}
+
+.btn-next {
+  width: 120px;
+  height: fit-content;
+}
+
+.form-select {
+  border-radius: 15px;
+}
+
+.table-header {
+  width: 100%;
+}

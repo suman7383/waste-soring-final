@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="./script/main.js" defer></script>
+    <title>Technophilia</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="d-flex justify-content-between">
+            <!-- logo image here -->
+            <img src="./images/logo.png" width="40" height="40" alt="logo" class="mt-3 ms-2"/>
+            <!-- -------- end logo --------->
+            <nav class="navbar navbar-expand-lg navbar-light navbar-main">
+              <div class="container-fluid">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNavDropdown"
+                  aria-controls="navbarNavDropdown"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle mx-4"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Profile
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdownMenuLink"
+                      >
+                        <li><a class="dropdown-item" href="/client/profile.html">Edit</a></li>
+                        <li><a class="dropdown-item" href="#" onClick="logout(event)">Log Out</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h2 class="heading text-center">Follow the steps to sort waste</h2>
+      </div>
+      <div class="container">
+        <form action="#" class="form">
+          <!-- Progress bar -->
+          <div class="progressbar">
+            <div class="progress-custom" id="progress-custom"></div>
+
+            <div
+              class="progress-step progress-step-active"
+              data-title="Select waste"
+            ></div>
+            <div class="progress-step" data-title="Process Waste"></div>
+            <div class="progress-step" data-title="Send Waste"></div>
+          </div>
+
+          <!-- Steps -->
+          <div class="form-step form-step-active">
+            <div class="input-group ">
+              <div class="container bg-white main-box py-3">
+                <!-- 1st row -->
+                <div class="row justify-content-center">
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3">
+                      <img
+                        src="./images/leaves.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check me-3">
+                      <input class="form-check-input" type="checkbox" name="leave" value="organic" id="flexCheckDefault">  
+                    </div>
+                  </div>  
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3 ms-1">
+                      <img
+                        src="./images/plastic.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" name="plastic" value="recyclable" id="flexCheckDefault">  
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3">
+                      <img
+                        src="./images/glass.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="glass" value="recyclable" id="flexCheckDefault">  
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3">
+                      <img
+                        src="./images/cans.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check me-1">
+                      <input class="form-check-input" type="checkbox" name="cans" value="recyclable" id="flexCheckDefault">  
+                    </div>
+                  </div> 
+                  </div>
+
+                  <!-- 2nd row                   -->
+                <div class="row justify-content-center mt-3">
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3 me-3">
+                      <img
+                        src="./images/bulb.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check me-3">
+                      <input class="form-check-input" type="checkbox" name="bulb" value="electronic" id="flexCheckDefault">  
+                    </div>
+                  </div>  
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3 ms-3">
+                      <img
+                        src="./images/battery.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check me-2">
+                      <input class="form-check-input" type="checkbox" name="battery" value="electronic" id="flexCheckDefault">  
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3 ms-2">
+                      <img
+                        src="./images/food.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="chicken" value="organic" id="flexCheckDefault">  
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="icons m-0 mt-3 ms-2">
+                      <img
+                        src="./images/paper.png"
+                        width="50px"
+                        height="50px"
+                      />
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="paper" value="recyclable" id="flexCheckDefault">  
+                    </div>
+                  </div> 
+                  </div>  
+                </div>
+              </div>
+              <div class="btns-group">
+                <div class="container-sm upload-box">
+                  <div class="upload-text">
+                    Not listed above ?<br>
+                    Upload a pic to detect type
+                  </div>
+                  <!-- <form id="file" name="file" onsubmit="return uploadMl(event)"> -->
+                    <label for="fileUpload" class="upload-label">
+                      <input class="upload-input" type="file" id="fileUpload" size="60" accept=".jpg,.png jpeg" onChange="uploadImage(event)"/> Upload
+                    </label>
+                  <!-- <input type="submit" class="btn btn-me" value="deetect"/>
+                  </form>   -->
+                  <div id="file-name"></div>
+                </div>  
+                <button href="#" class="btn btn-next width-30 ml-auto" onclick="sort(event)">Process</button>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="input-group">
+                <div class="container main-box">
+                  <div class="row justify-content-center">
+                    <!-- <div class="col-md-10 col-10">
+                      <h4 class="process-text text-center">Your waste is being processed! Please Wait...</h4>
+                    </div> -->
+                    <div class="col-md-10 col-10">
+                      <div class="dustbin-gif text-center mt-2 mb-3">
+                        <img src="https://tenor.com/view/green-studioclip-recycling-waste-ecology-gif-21228501.gif" width="200px" height="200px"/>
+                      </div>
+                    </div>
+                    <div class="col-md-10 col-10 d-flex justify-content-center my-3">
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-step">
+              <div class="input-group">
+                <div class="container main-box">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10 col-10 d-flex flex-column justify-content-evenly text-center my-3 mx-0 p-0">
+                      <h5>Organic Waste</h5>
+                      <div class="dustbin-icons text-center my-3">
+                        <img src="./images/organic-dustbin.png" width="100px" height="100px"/>
+                      </div>
+                      <span>items : <span class="item-count" id="organic-item-count" data-title="2"> </span></span>
+                      <div class="waste-items" id="organic-items">
+
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10 col-10 d-flex flex-column justify-content-evenly text-center my-3 mx-0 p-0">
+                      <h5>Recyclable Waste</h5>
+                      <div class="dustbin-icons text-center my-3">
+                        <img src="./images/recyclable-dustbin.png" width="100px" height="100px"/>
+                      </div>
+                      <span>items : <span class="item-count" id="recyclable-item-count" data-title="2"> </span></span>
+                      <div class="waste-items" id="recyclable-items">
+
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10 col-10 d-flex flex-column justify-content-evenly text-center my-3 mx-0 p-0">
+                      <h5>Electronic Waste</h5>
+                      <div class="dustbin-icons text-center my-3">
+                        <img src="./images/electronic-dustbin.png" width="100px" height="100px"/>
+                      </div>
+                      <span>items : <span class="item-count" id="electronic-item-count" data-title="2"></span></span>
+                      <div class="waste-items" id="electronic-items">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <a href="#" class="btn btn-send" onClick="sendData(event)">Send</a>  
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

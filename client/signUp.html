@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <link rel="stylesheet" type="text/css" href="./css/signup.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="./script/signUp.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create your account as citizen</h1>
+
+      <form id="signup-form">
+        <div class="signup">
+          <input type="text" id="fname" required />
+          <span></span>
+          <label for="fname">First name</label>
+        </div>
+        <div class="signup">
+          <input type="text" id="lname" required />
+          <span></span>
+          <label for="lname">Last name</label>
+        </div>
+        <div class="signup">
+          <input type="email" id="email" required />
+          <span></span>
+          <label for="email">Email id</label>
+        </div>
+        <div class="signup">
+          <input type="password" id="pass" required />
+          <span></span>
+          <label for="pass">Password</label>
+        </div>
+        <div class="signup_select">
+          <label>Select state :</label>
+          <select id="state" onChange="onStateChange()">
+            <option value="west bengal">West Bengal</option>
+            <option value="bihar">Bihar</option>
+            <option value="jharkhand">Jharkhand</option>
+            <option value="punjab">Punjab</option>
+          </select>
+        </div>
+        <div class="signup_select">
+          <label>Select city :</label>
+          <select id="city" onChange="onCityChange()"></select>
+        </div>
+        <div class="signup_select">
+          <label>Select locality :</label>
+          <select id="locality"></select>
+        </div>
+        <button
+          type="submit"
+          value="Create account"
+          id="create_acc"
+          onClick="register(event)"
+        >
+          Create Account
+        </button>
+        <div class="collector">
+          Create your account as collector
+          <a href="../Signup page collector/index.html">here</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
